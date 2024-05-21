@@ -11,7 +11,6 @@ doane_votes = 0
 with open(election_data_csv) as election_csv:
     csvreader = csv.reader(election_csv)
     csvheader = next(csvreader)
-    header_row = next(csvreader)
     total_votes_cast = total_votes_cast + 1
 
     for row in csvreader:
