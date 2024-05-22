@@ -14,9 +14,7 @@ with open(election_data_csv) as election_csv:
     total_votes_cast = total_votes_cast + 1
 
     for row in csvreader:
-        # total votes cast:
-        total_votes_cast = total_votes_cast + 1
-        
+      
         # total votes for stockham:
         if row[2] == "Charles Casper Stockham":
             stockham_votes = stockham_votes + 1
@@ -35,6 +33,9 @@ with open(election_data_csv) as election_csv:
         # doane percentage of votes:
         doane_percentage = doane_votes / total_votes_cast * 100
         
+        # total votes cast:
+        total_votes_cast = stockham_votes + degette_votes + doane_votes
+
         # determining winner
         winner = max(stockham_votes,degette_votes,doane_votes)
         if winner == stockham_votes:
